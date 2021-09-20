@@ -10,6 +10,9 @@ namespace App\Http\Controllers;
 
 class UserController extends Controller
 {
+
+
+    
     public function authenticate(Request $request)
     {
     $credentials = $request->only('email', 'password');
@@ -22,6 +25,9 @@ class UserController extends Controller
     }
     return response()->json(compact('token'));
     }
+
+
+
 
     public function getAuthenticatedUser()
     {
@@ -38,6 +44,8 @@ class UserController extends Controller
         }
         return response()->json(compact('user'));
     }
+
+
 
 
     public function register(Request $request)
@@ -62,4 +70,6 @@ class UserController extends Controller
 
         return response()->json(compact('user','token'),201);
     }
+
+
 }
